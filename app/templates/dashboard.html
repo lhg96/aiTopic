@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Dashboard</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Recent Problems
+                </div>
+                <div class="card-body">
+                    {% if recent_problems %}
+                        <div class="list-group">
+                            {% for problem in recent_problems %}
+                                <a href="{{ url_for('main.problem', id=problem.id) }}" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">{{ problem.question[:50] }}...</h6>
+                                        <small>{{ problem.created_at.strftime('%Y-%m-%d') }}</small>
+                                    </div>
+                                    <small class="text-muted">Difficulty: {{ problem.difficulty }}</small>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="mb-0">No problems created yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Recent Attempts
+                </div>
+                <div class="card-body">
+                    {% if recent_attempts %}
+                        <div class="list-group">
+                            {% for attempt in recent_attempts %}
+                                <div class="list-group-item">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">{{ attempt.problem.question[:50] }}...</h6>
+                                        <small>{{ attempt.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+                                    </div>
+                                    <p class="mb-1">
+                                        Your answer: {{ attempt.answer }}
+                                        {% if attempt.is_correct %}
+                                            <span class="badge bg-success">Correct</span>
+                                        {% else %}
+                                            <span class="badge bg-danger">Incorrect</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p class="mb-0">No attempts yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{{ url_for('main.practice') }}" class="btn btn-primary">Start Practice</a>
+    </div>
+</div>
+{% endblock %}

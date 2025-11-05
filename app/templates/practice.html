@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>학습하기</h1>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newProblemModal">
+            새로운 문제 생성
+        </button>
+    </div>
+
+    {% if problems %}
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for problem in problems %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">문제 #{{ problem.id }}</h5>
+                            <p class="card-text">{{ problem.question[:100] }}...</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="badge bg-info">{{ '문법' if problem.category == 'grammar' else '어휘' if problem.category == 'vocabulary' else problem.category }}</span>
+                                    <span class="badge bg-secondary">{{ '초급' if problem.difficulty == 'beginner' else '중급' if problem.difficulty == 'intermediate' else '고급' }}</span>
+                                </div>
+                                <a href="{{ url_for('main.problem', id=problem.id) }}" class="btn btn-primary">풀어보기</a>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            생성일: {{ problem.created_at.strftime('%Y-%m-%d') }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center">
+            <p>아직 문제가 없습니다. 새로운 문제를 생성해보세요!</p>
+        </div>
+    {% endif %}
+</div>
+
+<!-- New Problem Modal -->
+<div class="modal fade" id="newProblemModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">새로운 문제 생성</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url_for('main.generate_problem') }}" method="post">
+                    <div class="mb-3">
+                        <label for="category" class="form-label">카테고리</label>
+                        <select class="form-select" id="category" name="category" required>
+                            <option value="grammar">문법</option>
+                            <option value="vocabulary">어휘</option>
+                            <option value="reading">독해</option>
+                            <option value="listening">듣기</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="difficulty" class="form-label">난이도</label>
+                        <select class="form-select" id="difficulty" name="difficulty" required>
+                            <option value="beginner">초급</option>
+                            <option value="intermediate">중급</option>
+                            <option value="advanced">고급</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">문제 생성하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

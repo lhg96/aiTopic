@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 mb-4">Welcome to LangLoop</h1>
+            <p class="lead mb-4">Learn. Practice. Improve. Repeat.</p>
+            <p class="mb-5">AI-powered English learning platform that helps you master the language through personalized practice questions and intelligent feedback.</p>
+            
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Personalized Learning</h5>
+                            <p class="card-text">AI-generated questions based on your level and learning style</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Feedback</h5>
+                            <p class="card-text">Detailed explanations and tips for improvement</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Track Progress</h5>
+                            <p class="card-text">Monitor your improvements with detailed analytics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-outline-primary btn-lg">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
