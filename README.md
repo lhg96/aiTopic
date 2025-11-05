@@ -31,8 +31,8 @@ LangLoop은 AI 기반의 반복형 영어 문제 생성 및 해설 시스템입�
 
 1. 저장소 클론
 ```bash
-git clone https://github.com/yourusername/langloop.git
-cd langloop
+git clone https://github.com/lhg96/aiTopic.git
+cd aiTopic
 ```
 
 2. 가상환경 생성 및 활성화
@@ -245,7 +245,7 @@ flask run
 
 - 이름: 임현근 (Hyun-Keun Lim)
 - Email: hyun.lim@okkorea.net
-- GitHub: [프로젝트 저장소](https://github.com/yourusername/langloop)
+- GitHub: [프로젝트 저장소](https://github.com/lhg96/aiTopic)
 
 ---
 Last Updated: 2025년 7월 5일
