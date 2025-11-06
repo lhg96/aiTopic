@@ -1,25 +1,36 @@
-# LangLoop - AI 기반 영어 학습 플랫폼 🎯
+# Smart Learning Platform - 스마트 학습 문제 생성 플랫폼 🎯
 
-> "Learn. Practice. Improve. Repeat."
+![Flask](https://img.shields.io/badge/Flask-3.1.1-blue)
+![Python](https://img.shields.io/badge/Python-3.8+-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)
+![Bootstrap](https://img.shields.io/badge/UI-Bootstrap_5-purple)
 
-LangLoop은 AI 기반의 반복형 영어 문제 생성 및 해설 시스템입니다. 사용자의 수준과 필요에 맞춘 맞춤형 문제를 제공하여 효과적인 영어 학습을 지원합니다.
+> "AI가 만드는 맞춤형 학습 경험"
+
+Smart Learning Platform은 인공지능 기반의 맞춤형 학습 문제 생성 및 관리 시스템입니다. 다양한 주제와 난이도의 문제를 자동으로 생성하여 개인 맞춤형 학습 경험을 제공합니다.
 
 ## 📚 주요 기능
 
-### 1. 맞춤형 문제 생성
-- 문법, 어휘, 독해, 듣기 등 다양한 유형의 문제 제공
-- 초급, 중급, 고급 난이도 선택 가능
-- AI 기반 문제 생성으로 매번 새로운 학습 경험
+### 1. 스마트 문제 생성
+- 문법, 어휘, 독해 등 다양한 카테고리의 문제 제공
+- 초급(Beginner), 중급(Intermediate), 고급(Advanced) 난이도 선택
+- AI 기반 동적 문제 생성으로 매번 새로운 학습 콘텐츠
 
-### 2. 상세한 해설 제공
-- 문제별 상세 해설
-- 오답 분석
-- 관련 문법 포인트 및 예문 제공
+### 2. 실시간 피드백 시스템
+- 문제별 즉시 정답 확인
+- 상세한 해설 및 오답 분석
+- 관련 개념 설명 및 학습 팁 제공
 
-### 3. 학습 진행 상황 추적
-- 최근 풀이한 문제 기록
-- 정답률 통계
-- 취약 분야 분석
+### 3. 학습 진도 관리
+- 개인별 문제 풀이 기록 추적
+- 최근 학습 활동 대시보드
+- 학습 패턴 분석 및 통계
+
+### 4. 사용자 친화적 인터페이스
+- 직관적이고 깔끔한 웹 인터페이스
+- 모바일 반응형 디자인
+- 실시간 문제 생성 및 풀이 시스템
 
 ## 🚀 시작하기
 
@@ -27,51 +38,66 @@ LangLoop은 AI 기반의 반복형 영어 문제 생성 및 해설 시스템입�
 - Python 3.8 이상
 - pip (Python 패키지 관리자)
 
-### 설치 방법
+### 🚀 빠른 시작
 
-1. 저장소 클론
+#### 로컬 개발 환경
 ```bash
-git clone https://github.com/lhg96/aiTopic.git
-cd aiTopic
-```
+# 1. 저장소 클론
+git clone https://github.com/lhg96/smart-learning-platform.git
+cd smart-learning-platform
 
-2. 가상환경 생성 및 활성화
-```bash
+# 2. 가상환경 생성 및 활성화
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
-```
 
-3. 필요한 패키지 설치
-```bash
+# 3. 의존성 설치
 pip install -r requirements.txt
-```
 
-4. 데이터베이스 초기화
-```bash
+# 4. 데이터베이스 초기화
 flask db upgrade
-```
 
-5. 서버 실행
-```bash
+# 5. 개발 서버 실행
 flask run
 ```
 
-이제 웹 브라우저에서 http://localhost:5000 으로 접속하여 서비스를 이용할 수 있습니다.
+#### Docker 실행 (예정)
+```bash
+docker-compose up -d
+```
+
+웹 브라우저에서 http://localhost:5000 으로 접속하여 서비스를 이용할 수 있습니다.
+
+## 🏷️ 프로젝트 태그
+
+`flask` `python` `education` `ai` `learning-platform` `quiz-generator` `web-application` `sqlite` `bootstrap` `educational-technology` `adaptive-learning` `question-generation`
 
 ## 📦 기술 스택
 
-- **Backend**: Flask (Python)
-- **Database**: SQLite
-- **ORM**: SQLAlchemy
-- **Frontend**: HTML5, CSS3, Bootstrap 5
+### Backend
+- **Framework**: Flask 3.1.1 (Python 웹 프레임워크)
+- **Database**: SQLite (SQLAlchemy ORM)
 - **Authentication**: Flask-Login
+- **Migration**: Flask-Migrate
+- **Forms**: Flask-WTF
+
+### Frontend
+- **Templates**: Jinja2 템플릿 엔진
+- **Styling**: Bootstrap 5 (반응형 CSS 프레임워크)
+- **Scripts**: Vanilla JavaScript
+
+### 데이터베이스 설계
+- **User**: 사용자 정보 관리
+- **Problem**: 문제 데이터 저장
+- **Attempt**: 문제 풀이 기록 추적
 
 ## 🌟 주요 특징
 
-- **무료 체험**: 로그인 없이도 기본 기능 사용 가능
-- **반응형 디자인**: 모바일, 태블릿, 데스크톱 등 모든 기기에서 최적화된 경험
-- **직관적인 UI**: 사용하기 쉬운 인터페이스
-- **실시간 피드백**: 문제 풀이 즉시 결과 확인 가능
+- **즉시 사용 가능**: 복잡한 설정 없이 바로 문제 생성 및 풀이
+- **반응형 디자인**: 모바일, 태블릿, 데스크톱 모든 기기 지원
+- **실시간 피드백**: 문제 제출 즉시 정답 여부 및 해설 확인
+- **카테고리별 학습**: 문법, 어휘 등 목적에 맞는 학습 가능
+- **난이도 조절**: 학습자 수준에 맞는 문제 난이도 선택
+- **학습 기록**: 개인별 문제 풀이 이력 자동 저장
 
 ## 📱 서비스 화면
 
@@ -96,32 +122,46 @@ flask run
 
 ## 📊 프로젝트 현황
 
-### ✅ 완료된 기능
-1. 기본 인프라 구축
-   - Flask 애플리케이션 설정
-   - 데이터베이스 모델 설계 (User, Problem, Attempt)
-   - 기본 인증 시스템 구현
+![Development Status](https://img.shields.io/badge/Development-Active-brightgreen)
+![Version](https://img.shields.io/badge/Version-1.0.0--beta-orange)
+![Contributions](https://img.shields.io/badge/Contributions-Welcome-blue)
 
-2. 프론트엔드 구현
-   - 반응형 레이아웃 구현
-   - Bootstrap 5 기반 UI 설계
-   - 기본 템플릿 구성
+### ✅ 구현 완료된 기능
+1. **핵심 인프라**
+   - Flask 웹 애플리케이션 프레임워크 구축
+   - SQLAlchemy 기반 데이터베이스 모델 설계
+   - 사용자 인증 시스템 (Flask-Login)
+   - 데이터베이스 마이그레이션 시스템
 
-3. 핵심 기능 구현
-   - 문제 생성 기본 로직
-   - 문제 풀이 시스템
-   - 결과 피드백 시스템
+2. **사용자 인터페이스**
+   - Bootstrap 5 기반 반응형 웹 디자인
+   - 메인 대시보드, 학습 페이지, 문제 풀이 페이지
+   - 사용자 등록/로그인 시스템
+   - 에러 처리 페이지 (404, 500)
 
-### 🏗️ 진행 중인 작업
-1. AI 문제 생성 시스템
-   - [ ] GPT API 연동
-   - [ ] 문제 템플릿 다양화
-   - [ ] 난이도 조절 알고리즘
+3. **문제 관리 시스템**
+   - 문제 생성 및 저장 기능
+   - 카테고리별, 난이도별 문제 분류
+   - 객관식 문제 형태 지원
+   - 문제별 상세 해설 기능
 
-2. 학습 분석 시스템
-   - [ ] 사용자 학습 패턴 분석
-   - [ ] 맞춤형 문제 추천
-   - [ ] 진도 관리 시스템
+4. **학습 추적 시스템**
+   - 사용자별 문제 풀이 기록
+   - 정답/오답 통계
+   - 최근 학습 활동 추적
+
+### 🏗️ 현재 개발 상태
+1. **문제 생성 로직**
+   - 현재: 하드코딩된 샘플 문제 템플릿 사용
+   - 계획: AI 모델 연동을 통한 동적 문제 생성
+
+2. **사용자 경험 개선**
+   - 현재: 기본적인 문제 풀이 플로우 구현
+   - 계획: 개인 맞춤형 추천 시스템
+
+3. **AI 통합**
+   - 준비 단계: OpenAI API 연동 준비
+   - 목표: GPT 기반 문제 자동 생성 시스템
 
 ### 📝 향후 개발 계획
 
@@ -170,6 +210,10 @@ flask run
 
 ## 🤝 프로젝트 참여하기
 
+![GitHub Issues](https://img.shields.io/github/issues/lhg96/smart-learning-platform)
+![GitHub Stars](https://img.shields.io/github/stars/lhg96/smart-learning-platform)
+![GitHub Forks](https://img.shields.io/github/forks/lhg96/smart-learning-platform)
+
 ### 개발 환경 설정
 1. 개발 도구
    - VS Code 또는 PyCharm 권장
@@ -192,6 +236,8 @@ flask run
 - 문서화 필수
 
 ## 📄 라이센스
+
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 이 프로젝트는 MIT 라이센스를 따릅니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
@@ -251,9 +297,23 @@ flask run
 
 
 ## 📞 문의하기
+
+[![Email](https://img.shields.io/badge/Email-hyun.lim@okkorea.net-red)](mailto:hyun.lim@okkorea.net)
+[![Website](https://img.shields.io/badge/Website-okkorea.net-blue)](https://www.okkorea.net)
+
 개발 관련 컨설팅 및 외주 받습니다.
 
 프로젝트 관리자 연락처:
 - name: 임현근 (Hyun-Keun Lim)
 - Email: hyun.lim@okkorea.net
 - homepage: https://www.okkorea.net
+
+---
+
+<div align="center">
+
+**⭐ 이 프로젝트가 도움이 되셨다면 Star를 눌러주세요! ⭐**
+
+![GitHub Repo stars](https://img.shields.io/github/stars/lhg96/smart-learning-platform?style=social)
+
+</div>
