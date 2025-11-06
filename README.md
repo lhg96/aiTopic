@@ -248,13 +248,12 @@ flask run
    - 문장 구조 분석
    - 어휘 수준 평가
 
+
+
 ## 📞 문의하기
+개발 관련 컨설팅 및 외주 받습니다.
 
 프로젝트 관리자 연락처:
-
-- 이름: 임현근 (Hyun-Keun Lim)
+- name: 임현근 (Hyun-Keun Lim)
 - Email: hyun.lim@okkorea.net
-- GitHub: [프로젝트 저장소](https://github.com/lhg96/aiTopic)
-
----
-Last Updated: 2025년 7월 5일
+- homepage: https://www.okkorea.net
