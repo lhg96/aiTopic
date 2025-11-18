@@ -303,7 +303,8 @@ docker-compose up -d
 ### 👨‍💼 프로젝트 관리자 연락처
 
 **Email**: [hyun.lim@okkorea.net](mailto:hyun.lim@okkorea.net)  
-**Homepage**: [https://www.okkorea.net](https://www.okkorea.net)
+**Homepage**: [https://www.okkorea.net](https://www.okkorea.net)  
+**LinkedIn**: [https://www.linkedin.com/in/aionlabs/](https://www.linkedin.com/in/aionlabs/)  
 
 ### 🛠️ 전문 분야
 
